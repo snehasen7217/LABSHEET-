@@ -1,0 +1,580 @@
+ Advanced Python Lab – Programs
+
+## 1. ATM Withdrawal Simulator
+
+```python
+def withdraw(balance, amount):
+    balance -= amount
+    return balance
+
+balance = int(input("Enter balance: "))
+
+while True:
+    amount = int(input("Enter withdrawal amount: "))
+    balance = withdraw(balance, amount)
+    print("Remaining balance:", balance)
+
+    if balance <= 0:
+        print("Transaction completed")
+        break
+
+
+# 2. Student Marks Processing
+
+
+def calculate_avg(total, count):
+    return total / count
+
+total = 0
+count = 0
+
+while True:
+    marks = int(input("Enter marks: "))
+
+    if marks == 0:
+        break
+
+    if marks < 0 or marks > 100:
+        continue
+
+    total += marks
+    count += 1
+
+print("Average marks:", calculate_avg(total, count))
+
+# 3. Recursive Factorial Calculator
+
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n-1)
+
+while True:
+    num = int(input("Enter number: "))
+
+    if num == -1:
+        break
+
+    print("Factorial of", num, "is", factorial(num))
+
+# 4. Menu Driven Calculator
+
+
+def add(a,b):
+    return a+b
+
+def sub(a,b):
+    return a-b
+
+def mul(a,b):
+    return a*b
+
+while True:
+    print("1.Add\n2.Subtract\n3.Multiply\n4.Exit")
+    choice = int(input())
+
+    if choice == 4:
+        print("Calculator exited")
+        break
+
+    a,b = map(int,input().split())
+
+    if choice == 1:
+        print("Result:", add(a,b))
+    elif choice == 2:
+        print("Result:", sub(a,b))
+    elif choice == 3:
+        print("Result:", mul(a,b))
+    else:
+        pass
+
+
+# 5. Electricity Bill Calculator
+
+
+def calculate_bill(units):
+    return units * 5
+
+while True:
+    units = int(input("Enter units: "))
+
+    if units == 0:
+        break
+
+    print("Bill amount:", calculate_bill(units))
+
+
+# 6. Number Validation System
+
+
+def check_even_odd(n):
+    if n % 2 == 0:
+        print(n,"is Even")
+    else:
+        print(n,"is Odd")
+
+while True:
+    num = int(input("Enter number: "))
+
+    if num == 0:
+        break
+
+    if num < 0:
+        continue
+
+    check_even_odd(num)
+
+
+# 7. Recursive Sum of Digits
+
+
+def sum_digits(n):
+    if n == 0:
+        return 0
+    return n % 10 + sum_digits(n//10)
+
+while True:
+    num = int(input("Enter number: "))
+
+    if num == 0:
+        break
+
+    print("Sum of digits:", sum_digits(num))
+
+# 8. Banking Deposit System
+
+
+def deposit(balance, amount):
+    return balance + amount
+
+balance = 0
+
+while True:
+    amount = int(input("Enter deposit amount: "))
+
+    if amount == 0:
+        break
+
+    balance = deposit(balance, amount)
+
+print("Total balance:", balance)
+
+# 9. Prime Number Checker
+
+
+def is_prime(n):
+    if n <= 1:
+        return False
+
+    for i in range(2,n):
+        if n%i == 0:
+            return False
+    return True
+
+while True:
+    num = int(input("Enter number: "))
+
+    if num == 0:
+        break
+
+    if num <= 0:
+        continue
+
+    if is_prime(num):
+        print(num,"is Prime")
+    else:
+        print(num,"is Not Prime")
+
+
+# 10. Student Attendance Counter
+
+
+def percentage(present,total):
+    return (present/total)*100
+
+present = 0
+total = 0
+
+while True:
+    att = int(input("Enter attendance: "))
+
+    if att == -1:
+        break
+
+    if att == 1:
+        present +=1
+        total +=1
+    elif att == 0:
+        total +=1
+    else:
+        pass
+
+print("Attendance percentage:", round(percentage(present,total),2),"%")
+
+# 11. Recursive Fibonacci Series
+
+
+def fib(n):
+    if n<=1:
+        return n
+    return fib(n-1)+fib(n-2)
+
+n = int(input("Enter N: "))
+
+for i in range(n):
+    print(fib(i), end=" ")
+
+
+# 12. Shopping Cart Total
+
+
+def total_bill(total,price):
+    return total + price
+
+total = 0
+
+while True:
+    price = int(input("Enter price: "))
+
+    if price == 0:
+        break
+
+    total = total_bill(total,price)
+
+print("Total bill:", total)
+
+# 13. Number Guessing Game
+
+
+secret = 7
+
+while True:
+    guess = int(input("Enter guess: "))
+
+    if guess == secret:
+        print("Correct guess")
+        break
+    else:
+        print("Wrong guess")
+
+# 14. Voting Eligibility System
+
+
+def check_vote(age):
+    if age>=18:
+        print("Eligible to vote")
+    else:
+        print("Not eligible to vote")
+
+while True:
+    age = int(input("Enter age: "))
+
+    if age == 0:
+        break
+
+    if age < 0:
+        continue
+
+    check_vote(age)
+
+# 15. Recursive Power Calculator
+
+
+def power(a,b):
+    if b==0:
+        return 1
+    return a * power(a,b-1)
+
+while True:
+    a,b = map(int,input("Enter base and power: ").split())
+
+    if a==0 and b==0:
+        break
+
+    print("Result:", power(a,b))
+
+
+# 16. Multiplication Table Generator
+
+
+def table(n):
+    for i in range(1,11):
+        if i==5:
+            continue
+        print(n,"x",i,"=",n*i)
+
+num = int(input("Enter number: "))
+table(num)
+
+# 17. Online Exam Score Calculator
+
+
+def total_score(total,marks):
+    return total + marks
+
+total = 0
+
+while True:
+    marks = int(input("Enter marks: "))
+
+    if marks == 0:
+        break
+
+    if marks == -1:
+        pass
+    else:
+        total = total_score(total,marks)
+
+print("Total score:", total)
+
+
+# 18. Bank Interest Calculator
+
+
+def interest(p,r,t):
+    return (p*r*t)/100
+
+while True:
+    p,r,t = map(int,input("Enter principal, rate, time: ").split())
+
+    if p==0 and r==0 and t==0:
+        break
+
+    print("Interest:", interest(p,r,t))
+
+
+# 19. Recursive Reverse Number
+
+
+def reverse(n,rev=0):
+    if n==0:
+        return rev
+    return reverse(n//10, rev*10 + n%10)
+
+while True:
+    num = int(input("Enter number: "))
+
+    if num==0:
+        break
+
+    print("Reversed number:", reverse(num))
+
+
+# 20. Salary Slip Generator
+
+
+def total_salary(basic,bonus):
+    return basic + bonus
+
+while True:
+    basic,bonus = map(int,input("Enter basic and bonus: ").split())
+
+    if basic==0 and bonus==0:
+        break
+
+    print("Total salary:", total_salary(basic,bonus))
+
+
+# 21. Number Frequency Counter
+
+
+def frequency(arr,x):
+    return arr.count(x)
+
+nums = list(map(int,input("Enter numbers: ").split()))
+x = int(input("Enter number to search: "))
+
+print("Frequency of",x,"is",frequency(nums,x))
+
+
+# 22. Mini Calculator Using Module
+
+**Module file: `calc.py`**
+
+
+def add(a,b):
+    return a+b
+
+def sub(a,b):
+    return a-b
+
+
+**Main file**
+
+
+import calc
+
+while True:
+    print("1.Add\n2.Sub\n3.Exit")
+    ch = int(input())
+
+    if ch==3:
+        print("Program terminated")
+        break
+
+    a,b = map(int,input().split())
+
+    if ch==1:
+        print("Result:",calc.add(a,b))
+    elif ch==2:
+        print("Result:",calc.sub(a,b))
+
+# 23. Recursive GCD Calculator
+
+
+def gcd(a,b):
+    if b==0:
+        return a
+    return gcd(b,a%b)
+
+while True:
+    a,b = map(int,input("Enter numbers: ").split())
+
+    if a==0 and b==0:
+        break
+
+    print("GCD is",gcd(a,b))
+
+
+# 24. Bus Ticket Booking System
+
+
+def book(seats,req):
+    return seats-req
+
+seats = 10
+
+while True:
+    req = int(input("Enter seats to book: "))
+
+    if req==0:
+        break
+
+    seats = book(seats,req)
+    print("Seats remaining:",seats)
+
+    if seats<=0:
+        break
+
+
+# 25. Temperature Analysis System
+
+
+def analyze(temp_list):
+    return max(temp_list), min(temp_list)
+
+temps=[]
+
+while True:
+    t = int(input("Enter temperature: "))
+
+    if t==0:
+        break
+
+    if t<0:
+        continue
+
+    temps.append(t)
+
+mx,mn = analyze(temps)
+
+print("Maximum temperature:",mx)
+print("Minimum temperature:",mn)
+
+
+# 26. Exam Result Analyzer
+
+
+def grade(m):
+    if m>=80:
+        return "A"
+    elif m>=60:
+        return "B"
+    elif m>=50:
+        return "C"
+    else:
+        return "D"
+
+while True:
+    marks = int(input("Enter marks: "))
+
+    if marks==0:
+        break
+
+    if marks==-1:
+        pass
+    else:
+        print("Grade:",grade(marks))
+
+
+# 27. Recursive Digit Counter
+
+
+def count_digits(n):
+    if n==0:
+        return 0
+    return 1 + count_digits(n//10)
+
+while True:
+    num = int(input("Enter number: "))
+
+    if num==0:
+        break
+
+    print("Number of digits:",count_digits(num))
+
+
+# 28. Daily Expense Tracker
+
+
+def total_expense(total,exp):
+    return total + exp
+
+total = 0
+
+while True:
+    exp = int(input("Enter expense: "))
+
+    if exp==0:
+        break
+
+    total = total_expense(total,exp)
+
+print("Total expense:",total)
+
+
+# 29. Number Pattern Generator
+
+
+def pattern(n):
+    for i in range(1,n+1):
+        if i==3:
+            continue
+        for j in range(1,i+1):
+            print(j,end="")
+        print()
+
+rows = int(input("Enter number of rows: "))
+pattern(rows)
+
+# 30. Mini Utility Program
+
+
+def factorial(n):
+    if n==0:
+        return 1
+    return n*factorial(n-1)
+
+while True:
+    num = int(input("Enter number (-1 to exit): "))
+
+    if num==-1:
+        break
+
+    if num<0:
+        continue
+
+    print("Factorial:",factorial(num))
+
+
