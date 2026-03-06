@@ -1,0 +1,240 @@
+# PART 1 — DATA LOADING & STRUCTURE
+
+### 1. Import pandas and load dataset
+
+
+import pandas as pd
+
+df = pd.read_excel("Student_Record.xlsx")
+
+### 2. Display first 10 rows
+
+
+df.head(10)
+
+### 3. Display last 5 rows
+
+df.tail(5)
+
+
+### 4. Total number of rows and columns
+
+df.shape
+
+
+### 5. Display column names and data types
+
+
+df.info()
+
+
+# PART 2 — SERIES & DATAFRAME OPERATIONS
+
+### 6. Extract Marks column as Series
+
+marks_series = df["Marks"]
+print(marks_series)
+
+
+### 7. Extract Name and Department as DataFrame
+
+
+df[["Name","Department"]]
+
+### 8. Convert Name column to Python list
+
+
+name_list = df["Name"].tolist()
+print(name_list)
+
+### 9. Extract Attendance column and display datatype
+
+
+attendance = df["Attendance"]
+print(attendance.dtype)
+
+
+### 10. Create new DataFrame
+
+
+new_df = df[["Student_ID","Name","Marks"]]
+print(new_df)
+
+
+# PART 3 — SLICING USING LOC
+
+### 11. First 5 rows
+
+
+df.loc[0:4]
+
+
+### 12. Rows 5 to 10
+
+
+df.loc[5:10]
+
+### 13. Name and Marks for first 8 rows
+
+df.loc[0:7, ["Name","Marks"]]
+
+### 14. Marks value at row index 7
+
+
+df.loc[7, "Marks"]
+
+### 15. Department at index 3
+
+
+df.loc[3, "Department"]
+
+
+# PART 4 — POSITION BASED INDEXING (ILOC)
+
+### 16. First 3 rows
+
+
+df.iloc[0:3]
+
+
+### 17. Last 4 rows
+
+
+df.iloc[-4:]
+
+
+### 18. Rows 3 to 7 and columns 1 to 3
+
+
+df.iloc[3:8, 1:4]
+
+### 19. Value at row position 6 and column position 4
+
+
+df.iloc[6,4]
+
+
+### 20. Display Name column using iloc
+
+
+df.iloc[:,1]
+
+
+# PART 5 — FILTERING OPERATIONS
+
+### 21. Marks greater than 75
+
+
+df[df["Marks"] > 75]
+
+
+### 22. Marks less than 40
+
+df[df["Marks"] < 40]
+
+
+### 23. Students in Computer Science department
+
+df[df["Department"] == "Computer Science"]
+
+
+### 24. Attendance greater than 85%
+
+
+df[df["Attendance"] > 85]
+
+
+### 25. Marks >70 AND Attendance >80
+
+df[(df["Marks"] > 70) & (df["Attendance"] > 80)]
+
+### 26. Marks between 60 and 80
+
+
+df[df["Marks"].between(60,80)]
+
+
+### 27. Department IT or Computer Science
+
+
+df[df["Department"].isin(["IT","Computer Science"])]
+
+
+### 28. Marks above class average
+
+
+avg = df["Marks"].mean()
+df[df["Marks"] > avg]
+
+
+### 29. Name starts with "A"
+
+df[df["Name"].str.startswith("A")]
+
+
+### 30. Attendance below 60%
+
+df[df["Attendance"] < 60]
+
+
+# PART 6 — SORTING OPERATIONS
+
+### 31. Sort by Marks ascending
+
+
+df.sort_values(by="Marks")
+
+
+### 32. Sort by Marks descending
+
+
+df.sort_values(by="Marks", ascending=False)
+
+
+### 33. Top 5 students based on Marks
+
+
+df.sort_values(by="Marks", ascending=False).head(5)
+
+
+### 34. Bottom 5 students based on Marks
+
+
+df.sort_values(by="Marks").head(5)
+
+### 35. Sort by Department then Marks
+
+
+df.sort_values(by=["Department","Marks"])
+
+
+# PART 7 — GROUPING & AGGREGATION
+
+### 36. Average marks department-wise
+
+df.groupby("Department")["Marks"].mean()
+
+
+### 37. Count students in each department
+
+
+df["Department"].value_counts()
+
+
+### 38. Maximum marks in each department
+
+
+df.groupby("Department")["Marks"].max()
+
+
+### 39. Minimum marks department-wise
+
+
+df.groupby("Department")["Marks"].min()
+
+
+### 40. Total marks department-wise
+
+
+df.groupby("Department")["Marks"].sum()
+
