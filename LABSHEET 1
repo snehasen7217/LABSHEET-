@@ -2,7 +2,7 @@
 
 ## 1. Compare Student Marks with Passing Marks
 
-```python
+
 marks = int(input("Enter student marks: "))
 passing_marks = 40
 
@@ -10,13 +10,11 @@ if marks >= passing_marks:
     print("Student Passed")
 else:
     print("Student Failed")
-```
 
----
 
 ## 2. Compare Employee Salary with Minimum Salary
 
-```python
+
 salary = int(input("Enter employee salary: "))
 min_salary = 20000
 
@@ -26,13 +24,10 @@ elif salary == min_salary:
     print("Salary equals minimum salary")
 else:
     print("Salary is less than minimum salary")
-```
 
----
 
 ## 3. Compare Age with Voting Age
 
-```python
 age = int(input("Enter age: "))
 voting_age = 18
 
@@ -42,13 +37,10 @@ elif age == voting_age:
     print("Age equal to voting age")
 else:
     print("Age less than voting age")
-```
-
----
 
 ## 4. Compare Price of Two Products
 
-```python
+
 p1 = float(input("Enter price of product 1: "))
 p2 = float(input("Enter price of product 2: "))
 
@@ -58,13 +50,10 @@ elif p2 > p1:
     print("Product 2 is costlier")
 else:
     print("Both have same price")
-```
-
----
 
 ## 5. Check Account Balance for Withdrawal
 
-```python
+
 balance = float(input("Enter account balance: "))
 withdraw = float(input("Enter withdrawal amount: "))
 
@@ -72,13 +61,11 @@ if balance >= withdraw:
     print("Withdrawal allowed")
 else:
     print("Insufficient balance")
-```
 
----
 
 ## 6. Check Attendance Eligibility
 
-```python
+
 attendance = float(input("Enter attendance percentage: "))
 required = 75
 
@@ -86,26 +73,21 @@ if attendance >= required:
     print("Eligible for exam")
 else:
     print("Not eligible for exam")
-```
-
----
 
 ## 7. Compare Current Temperature
 
-```python
+
 temp = float(input("Enter current temperature: "))
 
 if 20 <= temp <= 30:
     print("Temperature is normal")
 else:
     print("Temperature is outside normal range")
-```
 
----
 
 ## 8. Compare Employee Working Hours
 
-```python
+
 hours = int(input("Enter working hours: "))
 required = 8
 
@@ -115,13 +97,11 @@ elif hours == required:
     print("Worked exact required hours")
 else:
     print("Worked less than required hours")
-```
 
----
 
 ## 9. Compare Income with Tax Exemption
 
-```python
+
 income = float(input("Enter monthly income: "))
 limit = 25000
 
@@ -129,13 +109,10 @@ if income > limit:
     print("Tax applicable")
 else:
     print("No tax")
-```
-
----
 
 ## 10. Compare Delivery Time
 
-```python
+
 d1 = int(input("Enter delivery time 1 (minutes): "))
 d2 = int(input("Enter delivery time 2 (minutes): "))
 
@@ -145,15 +122,13 @@ elif d2 < d1:
     print("Delivery 2 is faster")
 else:
     print("Both deliveries are same")
-```
 
----
 
 # Logical AND Programs
 
 ## 11. Positive and Even Number
 
-```python
+
 while True:
     num = int(input("Enter number: "))
 
@@ -165,13 +140,11 @@ while True:
     choice = input("Continue? (YES/NO): ")
     if choice.upper() == "NO":
         break
-```
 
----
 
 ## 12. Check Pass in 5 Subjects
 
-```python
+
 passed = True
 
 for i in range(1,6):
@@ -184,13 +157,11 @@ for i in range(1,6):
 
 if passed:
     print("Student passed all subjects")
-```
 
----
 
 ## 13. Voting Eligibility (Menu Driven)
 
-```python
+
 while True:
     age = int(input("Enter age: "))
     citizen = input("Are you citizen (yes/no): ")
@@ -203,38 +174,31 @@ while True:
     ch = input("Exit? (yes/no): ")
     if ch == "yes":
         break
-```
 
----
 
 ## 14. Bonus Eligibility (Ternary)
 
-```python
+
 salary = int(input("Enter salary: "))
 experience = int(input("Enter years of experience: "))
 
 result = "Eligible for bonus" if salary > 30000 and experience >= 2 else "Not eligible"
 print(result)
-```
-
----
 
 ## 15. Leap Year
 
-```python
+
 year = int(input("Enter year: "))
 
 if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
     print("Leap year")
 else:
     print("Not leap year")
-```
 
----
 
 ## 16. Divisible by 3 or 5
 
-```python
+
 while True:
     num = int(input("Enter number: "))
 
@@ -246,13 +210,11 @@ while True:
     ch = input("Continue? (yes/no): ")
     if ch == "no":
         break
-```
 
----
 
 ## 17. Sports Quota Eligibility
 
-```python
+
 state = input("State level player? (yes/no): ")
 national = input("National level player? (yes/no): ")
 
@@ -260,13 +222,11 @@ if state == "yes" or national == "yes":
     print("Eligible for sports quota")
 else:
     print("Not eligible")
-```
 
----
 
 ## 18. Discount Eligibility (Menu)
 
-```python
+
 while True:
     amount = float(input("Enter purchase amount: "))
     member = input("Membership? (yes/no): ")
@@ -279,107 +239,87 @@ while True:
     ch = input("Exit? (yes/no): ")
     if ch == "yes":
         break
-```
-
----
 
 ## 19. Job Eligibility (Ternary)
 
-```python
+
 degree = input("Do you have degree (yes/no): ")
 experience = int(input("Experience years: "))
 
 result = "Eligible for job" if degree == "yes" or experience >= 3 else "Not eligible"
 print(result)
-```
 
----
 
 ## 20. Weekend Check
 
-```python
+
 day = input("Enter day: ").lower()
 
 if day == "saturday" or day == "sunday":
     print("Weekend")
 else:
     print("Weekday")
-```
 
----
 
-# NOT Operator Programs
 
 ## 21. Blood Donation
 
-```python
+
 age = int(input("Enter age: "))
 
 if not(age >= 18 and age <= 60):
     print("Not eligible for blood donation")
 else:
     print("Eligible")
-```
 
----
 
 ## 22. Reverse Login Condition
 
-```python
+
 login = input("Are you logged in? (yes/no): ")
 
 if not(login == "yes"):
     print("User not logged in")
 else:
     print("User logged in")
-```
-
----
 
 ## 23. Check Not Positive
 
-```python
+
 num = int(input("Enter number: "))
 
 if not(num > 0):
     print("Number is not positive")
 else:
     print("Number is positive")
-```
 
----
 
 ## 24. Check User Role
 
-```python
+
 role = input("Enter user role: ")
 
 if not(role == "admin"):
     print("User is not admin")
 else:
     print("User is admin")
-```
 
----
 
 ## 25. Check Student Not Absent
 
-```python
+
 status = input("Enter attendance status (present/absent): ")
 
 if not(status == "absent"):
     print("Student is not absent")
 else:
     print("Student is absent")
-```
 
----
 
-# Mixed Logical Operators
 
 ## 26. Loan Eligibility
 
-```python
+
 income = int(input("Enter income: "))
 credit = int(input("Enter credit score: "))
 defaulter = input("Defaulter? (yes/no): ")
@@ -388,13 +328,10 @@ if income > 30000 and credit > 650 and not(defaulter == "yes"):
     print("Loan approved")
 else:
     print("Loan rejected")
-```
-
----
 
 ## 27. System Access
 
-```python
+
 login = input("Login status (yes/no): ")
 blocked = input("Blocked status (yes/no): ")
 
@@ -402,13 +339,11 @@ if login == "yes" and not(blocked == "yes"):
     print("Access granted")
 else:
     print("Access denied")
-```
 
----
 
 ## 28. Student Promotion
 
-```python
+
 result = input("Passed exam? (yes/no): ")
 sports = input("Sports quota? (yes/no): ")
 detention = input("Detained? (yes/no): ")
@@ -417,13 +352,11 @@ if (result == "yes" or sports == "yes") and not(detention == "yes"):
     print("Student promoted")
 else:
     print("Not promoted")
-```
 
----
 
 ## 29. Vehicle Entry
 
-```python
+
 permit = input("Permit? (yes/no): ")
 emission = input("Emission test passed? (yes/no): ")
 emergency = input("Emergency vehicle? (yes/no): ")
@@ -432,13 +365,11 @@ if (permit == "yes" and emission == "yes") or emergency == "yes":
     print("Vehicle allowed")
 else:
     print("Vehicle not allowed")
-```
 
----
 
 ## 30. Work From Home Eligibility
 
-```python
+
 while True:
     senior = input("Senior employee? (yes/no): ")
     medical = input("Medical reason? (yes/no): ")
